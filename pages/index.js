@@ -55,7 +55,7 @@ export default function Home({data}) {
         <div className="box">
           <h3>Ingredients</h3>
           <ul>
-            {getIngredients(meal).map(e => <li>{e}</li>)}
+            {getIngredients(meal).map(e => <li key={e}>{e}</li>)}
           </ul>
         </div>
         <h3>Instructions</h3>
@@ -82,7 +82,7 @@ export default function Home({data}) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Munchees - What's for dinner?</title>
+        <title>Munchees - What´s for dinner?</title>
         <meta name="description" content="Simple meal randomizer" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
