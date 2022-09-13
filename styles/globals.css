@@ -1,3 +1,8 @@
+:root {
+  --primary-color: tomato;
+  --primary-color-light: rgb(255, 180, 167);
+  
+}
 html,
 body {
   padding: 0;
@@ -21,6 +26,6 @@ a {
   }
   body {
     color: white;
-    background: black;
+    background: rgb(31, 31, 31);
   }
 }
