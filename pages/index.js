@@ -94,7 +94,7 @@ export default function Home({data}) {
         <div className={styles.card}>
           <div onClick={handleClick}>
             <h2 >{meal.strMeal}</h2>
-            <img src={meal.strMealThumb}/>
+            <img src={meal.strMealThumb} title="Click to show recipe"/>
           </div>
           {expanded ? cardBody(meal) : ""}
 

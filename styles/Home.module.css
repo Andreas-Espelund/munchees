@@ -44,34 +44,6 @@
   color: var(--primary-color);
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
 .card button{
   cursor: pointer;
   border: none;
@@ -111,13 +83,6 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
 
 .card {
   margin: 1rem;
@@ -129,7 +94,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
   transition: all 0.2s ease;
 }
 
@@ -138,15 +103,12 @@
   -webkit-columns: 2;
   -moz-columns: 2;
   border-radius: 10px;
-  border: 1px solid #eaeaea;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 30px;
 }
 
-.card div .box{
-  border: 1px solid red;
-}
+
 
 .card ul li{
   margin-bottom: 10px;
@@ -169,7 +131,11 @@
 
 .card h2 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: 3em;
+}
+
+.card h3{
+  font-size:1.8rem;
 }
 
 .card p {
@@ -212,6 +178,13 @@
     width: 100%;
     flex-direction: column;
   }
+  .button{
+    box-shadow: none;
+  }
+
+  .button:active{
+    transform: translateY(3px)
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -226,15 +199,4 @@
   .card button:hover{
     background-color: rgb(31, 31, 31);
   }
-}
-
-@media screen {
-  .button{
-    box-shadow: none;
-  }
-
-  .button:active{
-    transform: translateY(3px)
-  }
-
 }
