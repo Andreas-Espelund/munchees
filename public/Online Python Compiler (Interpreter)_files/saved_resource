@@ -1,0 +1,48 @@
+
+var ftGUID_6286173="53686CDCE1DEE7";
+var ftConfID_6286173="0";
+var ftParams_6286173="ft_custom=xzedQ7RGnUWuOuk2ti-eNcFBhzW7MZ9asUboM7FB6zLBQ55BwCT6CA==&ftOBA=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.programiz.com%2Fpython-programming%2Fonline-compiler%2F&gdpr=1&gdpr_consent=CPfMKEAPfMKEABEACBENCiCoAP_AAH_AAAIwI8Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ_Pkmnsbe2dYGH9_n9_z_ZKZ7______7______________________________9__________________________________BHhr_6__7e_8_3_f__9ujzGr_v_f__2mccL7tv3hu7_6_5fi_-xnd4u_VtfBVyPEl27YJCDto507iak2PVEqteZ9jcmzlfZpRP58k09jb2zrAw_v8_v-f7JTPf______f______________________________v_________________________________4AAA&cachebuster=791171.8108901045&ft_dv=%5B%25ft_dv%25%5D";
+var ftKeyword_6286173="";
+var ftCustom_6286173="xzedQ7RGnUWuOuk2ti-eNcFBhzW7MZ9asUboM7FB6zLBQ55BwCT6CA==";
+var ftSection_6286173="";
+var ftSegment_6286173="aixc";
+var ftSegmentList_6286173=[{s:'aixc'}];
+var ftRuleMatch_6286173="0";
+var ftTimestamp_6286173="1664292501";
+var ftGeoC2_6286173="no";
+var ftGeoState_6286173="30";
+var ftGeoCity_6286173="moss";
+var ftISP_6286173="uninett as";
+var ftSpeed_6286173="broadband";
+var ftDMA_6286173="578231";
+var ftLong_6286173="10.67";
+var ftLat_6286173="59.43";
+var ftPostal_6286173="1532";
+var ftTimeZone_6286173="200";
+var ftMobileCarrier_6286173="";
+var ftImp6286173 = {};
+ftImp6286173.privacy = "y";
+ftImp6286173.guidAge = "15";
+ftImp6286173.impID = "2CF40F2F-AB92-6512-3883-B37446EDBAB1";
+ftImp6286173.duid = "FT:53686CDCE1DEE7";
+
+ftImp6286173.ft_tpplid = "";
+ftImp6286173.ft_c = {};
+ftImp6286173.gdpr = "1";
+ftImp6286173.gdpr_consent = "CPfMKEAPfMKEABEACBENCiCoAP_AAH_AAAIwI8Nf_X__b3_n-_7___t0eY1f9_7__-0zjhfdt-8N3f_X_L8X_2M7vF36tr4KuR4ku3bBIQdtHOncTUmx6olVrzPsbk2cr7NKJ_Pkmnsbe2dYGH9_n9_z_ZKZ7______7______________________________9__________________________________BHhr_6__7e_8_3_f__9ujzGr_v_f__2mccL7tv3hu7_6_5fi_-xnd4u_VtfBVyPEl27YJCDto507iak2PVEqteZ9jcmzlfZpRP58k09jb2zrAw_v8_v-f7JTPf______f______________________________v_________________________________4AAA";
+ftImp6286173.gdpr_pd = "";
+ftImp6286173.oob_consent = "";
+ftImp6286173.gdprStoredConsent = "";
+ftImp6286173.us_privacy = "";
+
+ftImp6286173.jsAppend = "1";
+(function(){
+    var tag = document.getElementById('ft_servedby_6286173') || (function(s){
+    	return s[s.length-1];
+    }(document.getElementsByTagName('script'))),
+           js = document.createElement('script');
+    js.src =
+"https://cdn.flashtalking.com/xre/628/6286173/3972278/js/j-6286173-3972278.js";
+    js.id = "ftscript_m6286173";
+    tag.parentNode.insertBefore(js, tag);
+}());
