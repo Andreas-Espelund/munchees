@@ -61,7 +61,7 @@ export default function Home({data}) {
         <ol className="list-decimal flex flex-col gap-4 list-inside">
           {meal.strInstructions.split('.').filter(i => i != '').map(item => 
 
-          <li>{item}</li>
+          <li key={item}>{item}</li>
           )}
         </ol>
         
@@ -84,7 +84,7 @@ export default function Home({data}) {
     
   }
   return (
-    <div>
+    <div className="bg-primary">
       <Head>
         <title>Munchees - What´s for dinner?</title>
         <meta name="description" content="Simple meal randomizer" />
