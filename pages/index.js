@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
+import dice from '../public/dice.png'
 export default function Home({data}) {
 
   const [expanded, setexpanded] = useState(false)
@@ -40,16 +42,8 @@ export default function Home({data}) {
 
   const cardBody = (meal) =>{
     return (
-      <div>
-          <button className="bg-secondary w-fit active:drop-shadow-none active:translate-x-1 active:translate-y-1 transition-all p-4 border-2 text-2xl  drop-shadow-hard  border-black  font-bold  rounded-xl">
-
-          <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer" className="flex items-center w-fit">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
-            </svg>
-            <p> Watch Tutorial </p>
-          </a>
-          </button >
+      <div className="pb-8">
+          
         <div>
           <h3 className="text-xl font-bold py-4">Ingredients</h3>
           <ul className="grid grid-cols-2 gap-4 list-disc list-inside">
@@ -69,7 +63,20 @@ export default function Home({data}) {
     )
   }
 
-
+  const youtubeBtn = () => {
+    if (meal.strYoutube)  {
+      return (
+        <button id="btn" style={{display:expanded? 'grid' : 'none'}} className="bg-secondary text-lg font-bold py-1 px-4 flex-grow  grid place-content-center rounded-full border-2 border-black shadow-black drop-shadow-hard active:drop-shadow-none active:translate-x-1 active:translate-y-1 transition-all">
+          <a href={meal.strYoutube} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 w-fit text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+            </svg>
+            <p> Watch Tutorial </p>
+          </a>
+        </button >
+      )
+    }
+  }
   const router = useRouter()
 
   const refresh = ()=>{
@@ -80,8 +87,7 @@ export default function Home({data}) {
     const vis = !expanded
     getIngredients(meal)
     setexpanded(vis)
-    document.getElementById('body').style.height = vis? 'fit-content' : '0px'
-    
+    document.getElementById('body').style.display = vis? 'block' : 'none'
   }
   return (
     <div className="bg-primary">
@@ -91,27 +97,40 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <div className="bg-primary min-h-[100dvh] flex flex-col justify-between" >
+      <div className="bg-primary min-h-[100dvh] flex flex-col lg:justify-between" >
         <h1 className="text-center text-accent stroke drop-shadow-hard italic  font-black  text-6xl lg:text-7xl p-10">MUNCHEES</h1>
         <main className="flex flex-col gap-4 lg:w-1/2 m-2 lg:m-auto">
-          <button  onClick={refresh} className="bg-secondary  active:drop-shadow-none active:translate-x-1 active:translate-y-1 transition-all p-4 border-2 text-2xl w-full  drop-shadow-hard  border-black  font-bold  rounded-xl m-auto">Random!</button>
-          
-          <div className="border-2 border-black  bg-accent shadow-black drop-shadow-hard rounded-xl p-12 mb-20">
+         <div className="border-2 border-black  bg-accent shadow-black drop-shadow-hard rounded-xl p-12 pb-4 mb-20">
             <div  className="flex flex-col gap-4">
               <h3 className="text-3xl font-bold" >{meal.strMeal}</h3>
-              <img src={meal.strMealThumb} className="rounded-xl border-2 h-[50dvh] object-cover border-black shadow-black drop-shadow-hard"/>
-              <button title="click to show recipe" onClick={handleClick} className="bg-secondary w-fit p-4 rounded-full grid place-content-center border-2 border-black drop-shadow-hard shadow-black absolute bottom-4 right-4 active:drop-shadow-none active:translate-x-1 active:translate-y-1 transition-all ">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
-                </svg>
-
-              </button>
+              <div className=" relative flex h-[50dvh]">
+                <img src={meal.strMealThumb} className="rounded-xl border-2 w-full  object-cover border-black shadow-black drop-shadow-hard"/>
+                <div className="absolute right-0 -translate-y-8 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" strokeWidth={1.5} stroke="black" className="w-16 h-16">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex justify-end gap-2 flex-col-reverse lg:flex-row">
+                {youtubeBtn()}
+                <button title="click to show recipe" onClick={handleClick} className="flex ml-auto w-full justify-center font-bold items-center hover:cursor-pointer gap-2 rounded-full py-1 px-4 bg-secondary border-2 border-black drop-shadow-hard text-lg lg:w-fit lg:text-[0px] hover:text-lg transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5L7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5" />
+                  </svg>
+                  <p>{expanded? "Hide recipe" : "Show recipe"}</p>
+                </button>
+              </div>
             </div>
-            <div id="body" className="pt-4 transition-[height] max-h-fit overflow-hidden" style={{height:'0px'}}>
+            <div id="body" className="pt-4 transition-all" style={{display:'none'}}>
               {cardBody(meal)}
             </div>
           </div>
+
+          
         </main>
+        <button onClick={refresh} className="fixed bottom-4 right-4 active:rotate-[360deg] delay-rotate-100 hover:drop-shadow-none hover:translate-x-1 hover:translate-y-1 transition-all active:drop-shadow-none w-fit bg-secondary grid place-content-center p-4 rounded-full border-2 border-black shadow-black drop-shadow-hard">
+        <Image src={dice} width={48} height={48}/>
+      </button>
 
         <footer className="fixed bottom-4 left-4 font-bold" >
             <a href="https://github.com/Andreas-Espelund" target="_blank" rel="noopener noreferrer" className="flex justify-center items-center hover:cursor-pointer gap-2 rounded-full w-fit py-1 px-4 bg-accent border-2 border-black drop-shadow-hard text-[0px] hover:text-lg transition-all"> 
@@ -122,6 +141,7 @@ export default function Home({data}) {
             </a>
         </footer>
       </div>
+      
     </div>
   )
 }
