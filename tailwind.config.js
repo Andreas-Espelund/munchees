@@ -10,9 +10,9 @@ module.exports = {
         'hard':'3px 3px 0px rgba(0, 0, 0, 1)',
       },
       colors:{
-        'secondary' : '#F7FF1D',
-        'primary' : '#9C7AFF',
-        'accent' : '#4FFEAE'
+        'secondary' : '#b8b8ff',
+        'primary' : '#f8f7ff',
+        'accent' : '#b8b8ff'
       }
     },
   },
